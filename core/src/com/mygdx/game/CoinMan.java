@@ -62,7 +62,7 @@ public class CoinMan extends ApplicationAdapter {
 
 		font = new BitmapFont();
 		font.setColor(Color.WHITE);
-		font.getData().setScale(10);
+		font.getData().setScale(5);
 
 	}
 
