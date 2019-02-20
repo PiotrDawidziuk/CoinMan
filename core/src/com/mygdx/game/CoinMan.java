@@ -85,8 +85,7 @@ public class CoinMan extends ApplicationAdapter {
 		for (int i = 0; i < bombXs.size();i++){
 			batch.draw(bomb,bombXs.get(i),bombYs.get(i));
 			bombXs.set(i,bombXs.get(i)-8);
-			coinRectangles.add(new Rectangle(bombXs.get(i),bombYs.get(i),bomb.getWidth(),bomb.getHeight()));
-
+			bombRectangles.add(new Rectangle(bombXs.get(i),bombYs.get(i),bomb.getWidth(),bomb.getHeight()));
 		}
 
 		//coins
@@ -135,6 +134,12 @@ public class CoinMan extends ApplicationAdapter {
 		for (int i=0; i<coinRectangles.size(); i++){
 			if(Intersector.overlaps(manRectangle,coinRectangles.get(i))){
 				Gdx.app.log("Coin!","Collision!");
+			}
+		}
+
+		for (int i=0; i<bombRectangles.size(); i++){
+			if(Intersector.overlaps(manRectangle,bombRectangles.get(i))){
+				Gdx.app.log("Bomb!","BOOOOOOOM!");
 			}
 		}
 
